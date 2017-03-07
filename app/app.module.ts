@@ -4,6 +4,7 @@ import { BrowserModule } from '@angular/platform-browser';
 
 //Create a decorator
 //A decorator modifies an instance before it will be used.
+//App Module creates a foundation for the app
 @NgModule({
     imports : [BrowserModule]
 })
