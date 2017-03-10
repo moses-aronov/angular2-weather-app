@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 //Allows you to run the application in a browser
 import { BrowserModule } from '@angular/platform-browser';
 //Allow our app to create http requests
-import { JsonpModule } from '@angular/http';
+import { JsonpModule, HttpModule } from '@angular/http';
 
 //Import Component
 import { AppComponent } from './app.component';
@@ -15,7 +15,7 @@ import { TempertureUnitPipe } from './weather-widget/pipe/temperture-unit.pipe'
 //A decorator modifies an instance before it will be used.
 //App Module creates a foundation for the app
 @NgModule({
-    imports : [BrowserModule, JsonpModule],
+    imports : [BrowserModule, JsonpModule, HttpModule],
     //Declare Component
     declarations : [ AppComponent, WeatherComponent, SpeedUnitPipe, TempertureUnitPipe ],
     //Initialize Component

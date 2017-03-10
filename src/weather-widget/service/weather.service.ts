@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Jsonp } from '@angular/http';
+import { Jsonp, Http } from '@angular/http';
 import { Observable } from 'rxjs/Observable'
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/catch'
@@ -8,7 +8,7 @@ import { FORECAST_KEY, FORECAST_ROOT, MAPS_KEY, MAPS_ROOT } from '../constants/c
 @Injectable()
 
 export class WeatherService {
-    constructor(private jsonp: Jsonp) {
+    constructor(private jsonp: Jsonp, private http: Http) {
 
     }
 
@@ -37,5 +37,18 @@ export class WeatherService {
                 console.log("Unable to get weather data - ", err)
                 return Observable.throw(err.json())
             });
+    }
+
+    //Resolve Location
+    getLocationName(lat: number, long: number): Observable<any> {
+        const url = MAPS_ROOT
+        const queryParameters = "?latlng=" + lat + "," + long + "&key=" + MAPS_KEY;
+
+        return this.http.get(url + queryParameters)
+            .map(location => location.json())
+            .catch(err => {
+                console.log("Unable to get location", err);
+                return Observable.throw(err)
+            })
     }
 }
