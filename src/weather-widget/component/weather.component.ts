@@ -17,7 +17,6 @@ export class WeatherComponent {
         this.service.getCurrentLocation()
             .subscribe(position => {
                 this.pos = position
-                console.log(this.pos)
                 this.service.getCurrentWeather(this.pos.coords.latitude, this.pos.coords.longitude)
                     .subscribe(weather => console.log(weather),
                     err => console.error(err))
