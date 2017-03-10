@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 
+import { FORECAST_KEY, FORECAST_ROOT} from '../constants/constants'
 @Injectable()
 
 export class WeatherService { 
