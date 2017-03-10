@@ -5,23 +5,23 @@
                 <p>Rego Park, NY</p>
             </div>
             <div class="col-4 text-right">
-                <h1>3&deg;</h1>
+                <h1>{{weatherData.temp}}&deg;</h1>
             </div>
         </div>        
     </div>
     <div class="card-block">
         <h1>0</h1>
-        <p>Rain</p>
+        <p>{{ weatherData.summary }}</p>
     </div>
     <div class="card-footer">
         <div class="row justify-content-between">
             <div class="col-5">
                 <p>Wind</p>
-                <p>14mph</p>
+                <p>{{weatherData.wind}}mph</p>
             </div>
             <div class="col-5">
                 <p>Humidity</p>
-                <p>80%</p>
+                <p>{{weatherData.humidity}}%</p>
             </div>
 
         </div>
