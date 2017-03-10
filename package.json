@@ -1,7 +1,7 @@
 {
-  "name": "angular2-skeleton",
+  "name": "Weather Widget",
   "version": "1.0.0",
-  "description": "Moses's Angular2 Skeleton Project",
+  "description": "Moses's Weather Widget",
   "scripts": {
     "start": "tsc && concurrently \"tsc -w\" \"lite-server\" \"npm run copywatch\"",
     "lite": "lite-server",
