@@ -8,7 +8,15 @@ import { Component } from '@angular/core';
 
 @Component({
     selector: 'my-app', //The name of the html element 
-    template: '<h1>Skeleton Projects</h1>'//HTML code that will layout the component
+    template: `
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-3">
+                    <weather-widget></weather-widget>
+                </div>
+            </div>
+        </div>
+    `
 })
 
 export class AppComponent { }

@@ -4,6 +4,7 @@ import { BrowserModule } from '@angular/platform-browser';
 
 //Import Component
 import { AppComponent } from './app.component';
+import { WeatherComponent } from './weather-widget/component/weather.component'
 
 //Create a decorator
 //A decorator modifies an instance before it will be used.
@@ -11,7 +12,7 @@ import { AppComponent } from './app.component';
 @NgModule({
     imports : [BrowserModule],
     //Declare Component
-    declarations : [ AppComponent ],
+    declarations : [ AppComponent, WeatherComponent ],
     //Initialize Component
     bootstrap : [ AppComponent ]
 })
