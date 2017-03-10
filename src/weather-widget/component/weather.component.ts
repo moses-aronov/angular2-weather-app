@@ -13,7 +13,7 @@ import { Weather } from '../model/weather'
 export class WeatherComponent implements OnInit {
     pos: Position;
     weatherData = new Weather(null, null, null, null, null);
-    currentSpeedUnit = "mph";
+    currentSpeedUnit = "kph";
     currentTempertureUnit = "F"
     constructor(private service: WeatherService) { }
 
