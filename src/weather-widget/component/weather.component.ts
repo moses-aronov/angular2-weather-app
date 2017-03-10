@@ -14,7 +14,7 @@ import { Location } from '../model/location'
 export class WeatherComponent implements OnInit {
     pos: Position;
     weatherData = new Weather(null, null, null, null, null);
-    currentSpeedUnit = "kph";
+    currentSpeedUnit = "mph";
     currentTempertureUnit = "F"
     currentLocation = new Location(null, null);
 
@@ -57,5 +57,26 @@ export class WeatherComponent implements OnInit {
                 this.currentLocation.city = location.results[1].address_components[3].long_name
                 this.currentLocation.state = location.results[1].address_components[5].long_name
             })
+    }
+
+    toggleUnits(){
+        this.toggleSpeedUnits()
+        this.toggleTempUnits()
+    }
+
+    toggleTempUnits(){
+        if (this.currentTempertureUnit == "C"){
+            this.currentTempertureUnit = "F"
+        } else {
+            this.currentTempertureUnit = "C"
+        }
+    }
+
+    toggleSpeedUnits(){
+        if(this.currentSpeedUnit == "kph"){
+            this.currentSpeedUnit = "mph"
+        } else {
+            this.currentSpeedUnit = "kph"
+        }
     }
 }
