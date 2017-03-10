@@ -4,7 +4,7 @@ import { Observable } from 'rxjs/Observable'
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/catch'
 
-import { FORECAST_KEY, FORECAST_ROOT } from '../constants/constants'
+import { FORECAST_KEY, FORECAST_ROOT, MAPS_KEY, MAPS_ROOT } from '../constants/constants'
 @Injectable()
 
 export class WeatherService {
