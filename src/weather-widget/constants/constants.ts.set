@@ -1,2 +1,5 @@
 export const FORECAST_KEY = 'API_GOES_HERE';
-export const FORECAST_ROOT = 'ROOT_GOES_HERE'
+export const FORECAST_ROOT = 'https://api.darksky.net/forecast/'
+
+export const MAPS_KEY = 'API_GOES_HERE'
+export const MAPS_ROOT = "https://maps.googleapis.com/maps/api/geocode/json"
