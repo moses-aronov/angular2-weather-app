@@ -17,7 +17,7 @@
         <div class="row justify-content-between">
             <div class="col-5">
                 <p>Wind</p>
-                <p>{{weatherData.wind}}mph</p>
+                <p>{{weatherData.wind | speedUnit: currentSpeedUnit}}</p>
             </div>
             <div class="col-5">
                 <p>Humidity</p>
