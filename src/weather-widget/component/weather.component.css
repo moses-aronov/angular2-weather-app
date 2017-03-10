@@ -12,3 +12,34 @@
     user-select: none;
     /* Non-prefixed version, currently supported by Chrome and Opera */
 }
+
+.card {
+    box-shadow: 2px 2px 5px 0 rgba(0, 0, 0, 0.24)
+}
+
+.card,
+.card-header,
+.card-footer{
+    border: none;
+    border-radius: 0;
+    background-color: #00BCD4;
+    color: #fff;
+}
+
+.card-header,
+.card-footer{
+    padding: 1rem .5rem;
+}
+
+.card-block{
+    padding: 3rem;
+}
+
+.card-footer,
+.card-block{
+    text-align: center;
+}
+p{
+    margin: .2rem;
+    text-transform: uppercase;
+}
