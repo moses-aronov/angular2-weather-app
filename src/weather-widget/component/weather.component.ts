@@ -1,5 +1,6 @@
 import { Component } from '@angular/core'
 import { WeatherService } from '../service/weather.service';
+import { Weather } from '../model/weather'
 
 @Component({
     moduleId: module.id,
@@ -11,7 +12,8 @@ import { WeatherService } from '../service/weather.service';
 
 export class WeatherComponent {
     pos: Position;
-
+    WeatherData = new Weather(null, null, null, null, null)
+    
     constructor(private service: WeatherService) {
         //Save position data
         this.service.getCurrentLocation()
