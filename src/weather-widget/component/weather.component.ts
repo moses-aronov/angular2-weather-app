@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core'
 import { WeatherService } from '../service/weather.service';
 import { Weather } from '../model/weather'
+import { Location } from '../model/location'
 
 @Component({
     moduleId: module.id,
@@ -15,18 +16,21 @@ export class WeatherComponent implements OnInit {
     weatherData = new Weather(null, null, null, null, null);
     currentSpeedUnit = "kph";
     currentTempertureUnit = "F"
+    currentLocation = new Location(null, null);
+
     constructor(private service: WeatherService) { }
 
     //Hook into the initilization of component
     ngOnInit() {
-        this.getWeatherForCurrentLocation()
+        this.initCurrentLocation()
     }
 
-    getWeatherForCurrentLocation() {
+    initCurrentLocation() {
         this.service.getCurrentLocation()
             .subscribe(position => {
                 this.pos = position
                 this.getCurrentWeather()
+                this.getLocationName()
             },
             err => console.log(err))
     }
@@ -45,5 +49,13 @@ export class WeatherComponent implements OnInit {
 
             },
             err => console.error(err))
+    }
+
+    getLocationName(){
+        this.service.getLocationName(this.pos.coords.latitude, this.pos.coords.longitude)
+            .subscribe(location => {
+                this.currentLocation.city = location.results[1].address_components[3].long_name
+                this.currentLocation.state = location.results[1].address_components[5].long_name
+            })
     }
 }
