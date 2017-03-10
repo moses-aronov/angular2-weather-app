@@ -1,11 +1,11 @@
 <div class="card">
     <div class="card-header">
-        <div class="row">
-            <div class="col-8">
+        <div class="row justify-content-between">
+            <div class="col">
                 <p>Rego Park, NY</p>
             </div>
-            <div class="col-4 text-right">
-                <h1>{{weatherData.temp | number: '.0-0'}}&deg;</h1>
+            <div class="col text-right">
+                <h1>{{weatherData.temp | tempertureUnit: currentTempertureUnit }}</h1>
             </div>
         </div>        
     </div>

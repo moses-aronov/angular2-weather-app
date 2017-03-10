@@ -10,13 +10,14 @@ import { WeatherComponent } from './weather-widget/component/weather.component'
 
 //Import Pipes
 import { SpeedUnitPipe } from './weather-widget/pipe/speed-unit.pipe'
+import { TempertureUnitPipe } from './weather-widget/pipe/temperture-unit.pipe'
 //Create a decorator
 //A decorator modifies an instance before it will be used.
 //App Module creates a foundation for the app
 @NgModule({
     imports : [BrowserModule, JsonpModule],
     //Declare Component
-    declarations : [ AppComponent, WeatherComponent, SpeedUnitPipe ],
+    declarations : [ AppComponent, WeatherComponent, SpeedUnitPipe, TempertureUnitPipe ],
     //Initialize Component
     bootstrap : [ AppComponent ]
 })
