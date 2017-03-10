@@ -11,7 +11,7 @@ import { Component } from '@angular/core';
     template: `
         <div class="container">
             <div class="row">
-                <div class="col-xs-3">
+                <div class="col-3">
                     <weather-widget></weather-widget>
                 </div>
             </div>
