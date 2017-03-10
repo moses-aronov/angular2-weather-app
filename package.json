@@ -7,7 +7,7 @@
     "lite": "lite-server",
     "tsc": "tsc",
     "tsc:w": "tsc -w",
-    "copywatch": "cpx \"src/**/*.{html,css}\" dist --watch"
+    "copywatch": "cpx \"src/**/*.{html,css,js}\" dist --watch"
   },
   "license": "UNLICENSED",
   "repository": {
