@@ -1,8 +1,8 @@
-<div class="card">
+<div class="card" (click)="toggleUnits()">
     <div class="card-header">
         <div class="row justify-content-between">
             <div class="col">
-                <p>Rego Park, NY</p>
+                <p>{{currentLocation.city}}<br>{{currentLocation.state}}</p>
             </div>
             <div class="col text-right">
                 <h1>{{weatherData.temp | tempertureUnit: currentTempertureUnit }}</h1>
