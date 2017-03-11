@@ -27,6 +27,7 @@
 .card-header,
 .card-footer{
     padding: 1rem .5rem;
+    background-color: transparent;
 }
 
 .card-block{
