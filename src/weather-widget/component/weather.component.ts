@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core'
 import { WeatherService } from '../service/weather.service';
 import { Weather } from '../model/weather'
 import { Location } from '../model/location'
-
+import { WEATHER_COLORS} from '../constants/constants'
 //Set to avoid typescript aerror
 declare var Skycons: any;
 
