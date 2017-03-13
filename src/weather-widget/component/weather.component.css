@@ -72,3 +72,6 @@ p{
 p:not(.unit-label){
     text-transform: uppercase;
 }
+#datetime-wrapper{
+    font-size: .8rem;
+}

@@ -3,9 +3,11 @@ import { WeatherService } from '../service/weather.service';
 import { Weather } from '../model/weather'
 import { Location } from '../model/location'
 import { WEATHER_COLORS} from '../constants/constants'
+import { DatePipe } from '@angular/common';
 
 //Set to avoid typescript aerror
 declare var Skycons: any;
+
 
 @Component({
     moduleId: module.id,
@@ -16,6 +18,7 @@ declare var Skycons: any;
 })
 
 export class WeatherComponent implements OnInit {
+    datePipeEn: DatePipe = new DatePipe("en-US")
     pos: Position;
     weatherData = new Weather(null, null, null, null, null);
     currentSpeedUnit = "mph";
@@ -25,8 +28,11 @@ export class WeatherComponent implements OnInit {
         "color": "#fff"
     });
     dataRecieved =false;
+    datetime: String
 
-    constructor(private service: WeatherService) { }
+    constructor(private service: WeatherService) {
+        
+     }
 
     //Hook into the initilization of component
     ngOnInit() {
@@ -39,6 +45,7 @@ export class WeatherComponent implements OnInit {
                 this.pos = position
                 this.getCurrentWeather()
                 this.getLocationName()
+                
             },
             err => console.log(err))
     }
@@ -56,6 +63,7 @@ export class WeatherComponent implements OnInit {
                 this.setIcon()
                 //Set dataRecieved, thiss will trigger the display of the widget
                 this.dataRecieved = true;
+                this.setDateTime()
 
             },
             err => console.error(err))
@@ -67,6 +75,10 @@ export class WeatherComponent implements OnInit {
                 this.currentLocation.city = location.results[1].address_components[3].long_name
                 this.currentLocation.state = location.results[1].address_components[5].short_name
             })
+    }
+
+    setDateTime(){
+        this.datetime = this.datePipeEn.transform(new Date(), 'MMM d, y h:m a')
     }
 
     toggleUnits(){
