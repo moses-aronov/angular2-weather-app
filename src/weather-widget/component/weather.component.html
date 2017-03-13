@@ -1,5 +1,6 @@
 <div class="card" (click)="toggleUnits()" [ngStyle]="setStyles()">
-    <div class="card-header">
+    <!-- Check if data is recieved if not, setto invisible-->
+    <div class="card-header" [class.invisible]="!dataRecieved">
         <div class="row justify-content-between">
             <div class="col">
                 <p>{{currentLocation.city}}<br>{{currentLocation.state}}</p>
@@ -13,7 +14,7 @@
         <canvas id="icon" width="100%"></canvas>
         <p>{{ weatherData.summary }}</p>
     </div>
-    <div class="card-footer">
+    <div class="card-footer" [class.invisible] = "!dataRecieved">
         <div class="row justify-content-between">
             <div class="col-5">
                 <p>Wind</p>

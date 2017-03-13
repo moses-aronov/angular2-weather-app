@@ -24,6 +24,7 @@ export class WeatherComponent implements OnInit {
     icons = new Skycons({
         "color": "#fff"
     });
+    dataRecieved =false;
 
     constructor(private service: WeatherService) { }
 
@@ -53,7 +54,8 @@ export class WeatherComponent implements OnInit {
                 this.weatherData.wind = weather["currently"]["windSpeed"],                              
                 this.weatherData.summary = weather["currently"]["summary"]
                 this.setIcon()
-                console.log("Weather: ", this.weatherData)
+                //Set dataRecieved, thiss will trigger the display of the widget
+                this.dataRecieved = true;
 
             },
             err => console.error(err))
