@@ -2,7 +2,7 @@
     <!-- Check if data is recieved if not, setto invisible-->
     <div class="card-header" [class.invisible]="!dataRecieved">
         <div class="d-flex flex-row justify-content-between">
-            <div class="f-flex flex-column" id="location-wrapper">
+            <div class="f-flex flex-column" id="location-wrapper" (click)="toggleRefresh($event)">
                 <p><i id="location-icon" class="fa fa-map-marker" aria-hidden="true"></i>{{currentLocation.city}}, {{currentLocation.state}}</p>
                 <p id="datetime-wrapper">{{datetime}}</p>
             </div>
@@ -17,8 +17,8 @@
             <span class="sr-only">Loading...</span>
         </div>
         <div class="d-flex flex-column align-items-center">
-        <canvas id="icon" width="100%" [hidden]="!dataRecieved" class="flex-row"></canvas>
-        <p class="flex-row">{{ weatherData.summary }}</p>
+            <canvas id="icon" width="100%" [hidden]="!dataRecieved" class="flex-row"></canvas>
+            <p class="flex-row" [hidden]="!dataRecieved">{{ weatherData.summary }}</p>
         </div>
     </div>
     <div class="card-footer" [class.invisible] = "!dataRecieved">
@@ -33,7 +33,8 @@
             </div>
         </div>
         <div class="row justify-content-around" id="helper-row">
-            <small class="text-muted">Click to switch betweeb &deg;f/mph and &deg;c/kph</small>
+            <small class="text-muted">Click to switch between &deg;f/mph and &deg;c/kph</small>
+            <small class="text-muted">Click date/time refresh</small>
         </div>
 
     </div>
