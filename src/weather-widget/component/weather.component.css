@@ -14,7 +14,9 @@
 }
 
 .card {
-    box-shadow: 2px 2px 5px 0 rgba(0, 0, 0, 0.24)
+    box-shadow: 2px 2px 5px 0 rgba(0, 0, 0, 0.24);
+    transition: background-color 0.5s ease;
+    cursor: pointer;
 }
 
 .card,
@@ -29,16 +31,44 @@
     padding: 1rem .5rem;
     background-color: transparent;
 }
+#location.wrapper {
+    font-size: 1.1rem;
+}
+#location-icon{
+    padding-right: .5rem;
+}
 
 .card-block{
-    padding: 3rem;
+    padding: 1.5rem 0;
+}
+
+canvas{
+    max-width: 250px;
+    margin-bottom: 1rem;
+}
+
+#indicator{
+    height: 165px;
+}
+
+#summary{
+    height: 165px;
 }
 
 .card-footer,
 .card-block{
     text-align: center;
 }
+#detail-row{
+    font-size: .8rem;
+}
+#helper-row{
+    padding-top: 1.5rem;
+}
 p{
     margin: .2rem;
+
+}
+p:not(.unit-label){
     text-transform: uppercase;
 }
